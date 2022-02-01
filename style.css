@@ -1,0 +1,96 @@
+html {
+    background-color: brown;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 10px;
+}
+
+.title {
+    text-align: center;
+    color: brown;
+}
+
+.new-game {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    margin-top: 3rem;
+    border: none;
+    color: gray;
+}
+
+.new-game_image {
+    padding-right: 0.5rem;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.score-1 {
+    margin: auto;
+}
+
+.score-2 {
+    margin: auto;
+}
+
+.score-1_name, .score-2_name {
+    font-size: 4rem;
+    color: gray;
+}
+
+.score-1_total, .score-2_total {
+    color: lightcoral;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.dice {
+    width:  7rem;
+    height: 7rem;
+    background-color: white;
+    border: solid 1px grey;
+    position: absolute;
+    top: 18rem;
+}
+
+.game {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10rem;
+}
+
+.cumul-1, .cumul-2 {
+    background-color: red;
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 20px 10px 20px;
+}
+
+.current-1, .current-2 {
+    color: white;
+}
+
+.roll-dice, .hold {
+    position: absolute;
+    border: none;
+    color: gray;
+    background-color: white;
+    font-size: 2rem;
+}
+
+.roll-dice {
+    top: 35rem;
+}
+
+.hold {
+    top: 42rem;
+}
