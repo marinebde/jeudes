@@ -33,6 +33,20 @@ body {
     padding-top: 4rem;
 }
 
+.vainqueur {
+    height: 600px;
+    width: 1000px;
+    background-color:rgba(0, 0, 0, 0.86);
+    color: white;
+    font-size: 5rem;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
 .score-1 {
     margin: auto;
 }
@@ -52,14 +66,11 @@ body {
     text-align: center;
 }
 
-.dice {
-    width:  7rem;
-    height: 7rem;
-    background-color: white;
-    border: solid 1px grey;
+#dice {
     position: absolute;
     top: 18rem;
 }
+
 
 .game {
     padding-top: 10rem;
@@ -75,7 +86,7 @@ body {
     padding: 10px 20px 10px 20px;
 }
 
-.current-1, .current-2 {
+.current-0, .current-1 {
     color: white;
 }
 
