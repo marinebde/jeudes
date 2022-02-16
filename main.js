@@ -1,5 +1,9 @@
+import {convertion} from './modules/convertion-dice.js';
 
-var player, current, scores;
+let player, current, scores;
+let myModal = new bootstrap.Modal(document.getElementById('modal1'), {
+    keyboard: false
+  })
 
 nouveau();
 
@@ -30,40 +34,14 @@ function nextPlayer() {
     document.getElementById('current_1').textContent ='0';
 }
 
-function convertionLettre1a6(chiffre) {
-	let lettre;
-	switch (chiffre) {
-		case 1:
-			lettre = "one";
-			break;
-		case 2:
-			lettre = "two";
-			break;
-		case 3:
-			lettre = "three";
-			break;
-		case 4:
-			lettre = "four";
-			break;
-		case 5:
-			lettre = "five";
-			break;
-		case 6:
-			lettre = "six";
-            break;
-    }   
-		return lettre;
-};
+let newGame = document.getElementById('new-game');
+let rollDice = document.getElementById('roll-dice');
+let holdButton = document.getElementById('hold-button');
 
+newGame.addEventListener('click', nouveau);
 
-function convertion(chiffre) {
-	if (chiffre >= 0 && chiffre < 7 ) {
-		return convertionLettre1a6(chiffre);
-	}
-};
-
-function roll () {
-    var a = 0;
+rollDice.addEventListener('click', () => {
+    let a = 0;
     a = Math.random();
     a = Math.ceil(6*a);
     dice.setAttribute('class', `fas fa-dice-${convertion(a)} fa-10x`);
@@ -74,29 +52,22 @@ function roll () {
     } else {
         nextPlayer();
     }
-};
+});
 
-function hold () {
+holdButton.addEventListener('click', () => {
     scores[player] = scores[player] + current;
     document.getElementById('score-' + player).textContent = scores[player];
 
    if (scores[player] >= 100) {
-       let vainqueur = document.getElementById('gagnant');
-       vainqueur.setAttribute('class', 'vainqueur');
-       vainqueur.textContent = `LE JOUEUR ${player} REMPORTE LA PARTIE`;
-       current = 0;
-       scores = [0, 0];
+    myModal.show();
+    current = 0;
+    scores = [0, 0];
+    if (player == 0){
+        document.getElementById('modal-body').textContent = `Player 1`;
+    } else {
+        document.getElementById('modal-body').textContent = `Player 2`;
+    }
    } else {
        nextPlayer();
    };
-}
-
-let newGame = document.getElementById('new-game');
-let rollDice = document.getElementById('roll-dice');
-let holdButton = document.getElementById('hold-button');
-
-newGame.addEventListener('click', nouveau);
-rollDice.addEventListener('click', roll);
-holdButton.addEventListener('click', hold);
-
-
+});

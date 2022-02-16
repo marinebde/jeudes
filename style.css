@@ -6,6 +6,7 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 10px;
 }
+/* En-tête du jeu */ 
 
 .title {
     text-align: center;
@@ -25,26 +26,12 @@ body {
 .new-game_image {
     padding-right: 0.5rem;
 }
-
+/* Tableau des scores + dé*/
 .score {
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: 4rem;
-}
-
-.vainqueur {
-    height: 600px;
-    width: 1000px;
-    background-color:rgba(0, 0, 0, 0.86);
-    color: white;
-    font-size: 5rem;
-    font-weight: 500;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 1;
 }
 
 .score-1 {
@@ -71,6 +58,7 @@ body {
     top: 18rem;
 }
 
+/* Boutons de jeu + score courant*/
 
 .game {
     padding-top: 10rem;
@@ -104,4 +92,33 @@ body {
 
 .hold {
     top: 42rem;
+}
+
+
+/* breakpoint : 700 */
+
+@media screen and (max-width: 700px) {
+    .score-1_name, .score-2_name {
+        font-size: 1.5rem;
+    }
+
+    .score-1_total, .score-2_total {
+        font-size: 3rem;
+    }
+
+    #dice {
+        font-size: 5rem;
+    }
+
+    .roll-dice, .hold {
+        font-size: 1.5rem;
+    }
+
+    .roll-dice {
+        top: 25rem;
+    }
+    
+    .hold {
+        top: 38rem;
+    }
 }
